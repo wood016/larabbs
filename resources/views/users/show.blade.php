@@ -13,10 +13,10 @@
              alt="{{ $user->name }}">
         <div class="card-body">
           <h5><strong>个人简介</strong></h5>
-          <p>这个人很懒，什么也没有写</p>
+          <p>{{ $user->introduction }}</p>
           <hr>
           <h5><strong>注册于</strong></h5>
-          <p>10 01 1999</p>
+          <p>{{ $user->created_at->diffForHumans() }}</p>
         </div>
       </div>
     </div>
