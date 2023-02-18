@@ -17,12 +17,21 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $avatars = [
+            'https://via.placeholder.com/30?text=10',
+            'https://via.placeholder.com/30?text=20',
+            'https://via.placeholder.com/30?text=30',
+            'https://via.placeholder.com/30?text=40',
+            'https://via.placeholder.com/30?text=50',
+        ];
         return [
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'introduction' => $this->faker->sentence(),
+            'avatar' => $this->faker->randomElement($avatars),
         ];
     }
 
