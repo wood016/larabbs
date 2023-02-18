@@ -27,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
 
         // \Carbon\Carbon::setLocale('zh');
+        \Illuminate\Pagination\Paginator::useBootstrap();
     }
 }
