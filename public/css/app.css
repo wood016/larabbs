@@ -21206,3 +21206,9 @@ body {
 #app > div.container {
   margin-bottom: 100px;
 }
+
+.simditor-body img, .topic-body img {
+  max-width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
