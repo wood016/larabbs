@@ -24,5 +24,12 @@ class UsersTableSeeder extends Seeder
         $user->email = 'tomcat@localhost.com';
         $user->avatar = 'http://singlebbs.test/uploads/images/avatars/202302/17/17_1676626588_jsLEwmQ24h.png';
         $user->save();
+        // 初始化用户角色，将1号用户指定为站长。
+        $user->assignRole('Founder');
+        // 将2号用户指派为管理员。
+        $user = User::find(2);
+        $user->email = 'apache@localhost.com';
+        $user->save();
+        $user->assignRole('Maintainer');
     }
 }
